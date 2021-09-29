@@ -39,4 +39,13 @@ class FizzBuzzTest {
     }
   }
 
+  @Test
+  @DisplayName("Test neither values")
+  void getFizzBuzz_neither() {
+    FizzBuzz fb = new FizzBuzz();
+    for (int value : neitherValues) {
+      assertEquals(String.valueOf(value), fb.getFizzBuzz(value));
+    }
+  }
+
 }
