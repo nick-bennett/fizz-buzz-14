@@ -10,12 +10,10 @@ public class FizzBuzz {
       } else {
         str = "Fizz";
       }
+    } else if (value % 5 == 0) {
+      str = "Buzz";
     } else {
-      if (value % 5 == 0) {
-        str = "Buzz";
-      } else {
-        str = String.valueOf(value);
-      }
+      str = String.valueOf(value);
     }
     return str;
   }
