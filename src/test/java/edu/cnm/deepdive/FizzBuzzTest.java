@@ -2,6 +2,7 @@ package edu.cnm.deepdive;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.EnumSet;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -16,8 +17,9 @@ class FizzBuzzTest {
   @DisplayName("Test Fizz values")
   void getFizzBuzz_fizz() {
     FizzBuzz fb = new FizzBuzz();
+    EnumSet<FizzBuzzValue> expected = EnumSet.of(FizzBuzzValue.FIZZ);
     for (int value : fizzValues) {
-      assertEquals(FizzBuzz.FIZZ_VALUE, fb.getFizzBuzz(value));
+      assertEquals(expected, fb.getFizzBuzz(value));
     }
   }
 
@@ -25,8 +27,9 @@ class FizzBuzzTest {
   @DisplayName("Test Buzz values")
   void getFizzBuzz_buzz() {
     FizzBuzz fb = new FizzBuzz();
+    EnumSet<FizzBuzzValue> expected = EnumSet.of(FizzBuzzValue.BUZZ);
     for (int value : buzzValues) {
-      assertEquals(FizzBuzz.BUZZ_VALUE, fb.getFizzBuzz(value));
+      assertEquals(expected, fb.getFizzBuzz(value));
     }
   }
 
@@ -34,8 +37,9 @@ class FizzBuzzTest {
   @DisplayName("Test FizzBuzz values")
   void getFizzBuzz_fizzBuzz() {
     FizzBuzz fb = new FizzBuzz();
+    EnumSet<FizzBuzzValue> expected = EnumSet.of(FizzBuzzValue.FIZZ, FizzBuzzValue.BUZZ);
     for (int value : fizzBuzzValues) {
-      assertEquals(FizzBuzz.FIZZ_BUZZ_VALUE, fb.getFizzBuzz(value));
+      assertEquals(expected, fb.getFizzBuzz(value));
     }
   }
 
@@ -43,8 +47,9 @@ class FizzBuzzTest {
   @DisplayName("Test neither values")
   void getFizzBuzz_neither() {
     FizzBuzz fb = new FizzBuzz();
+    EnumSet<FizzBuzzValue> expected = EnumSet.noneOf(FizzBuzzValue.class);
     for (int value : neitherValues) {
-      assertEquals(String.valueOf(value), fb.getFizzBuzz(value));
+      assertEquals(expected, fb.getFizzBuzz(value));
     }
   }
 
